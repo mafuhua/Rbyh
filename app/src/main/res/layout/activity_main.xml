@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_title_bar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="100dp"
+
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_grbm"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/username_circle_f"
+            android:gravity="center"
+            android:textSize="22sp"
+            android:text="个人报名"
+            android:textColor="@android:color/white"/>
+
+        <Button
+            android:id="@+id/btn_jsdj"
+            android:textSize="22sp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/username_circle_g"
+            android:gravity="center"
+            android:text="家属登记"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_zbrx"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:textSize="22sp"
+            android:layout_margin="15dp"
+            android:background="@drawable/username_circle_h"
+            android:gravity="center"
+            android:text="征兵热线"
+            android:textColor="@android:color/white"/>
+
+        <Button
+            android:id="@+id/btn_zbsm"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:textSize="22sp"
+            android:layout_margin="15dp"
+            android:background="@drawable/username_circle_i"
+            android:gravity="center"
+            android:text="征兵说明"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+</LinearLayout>

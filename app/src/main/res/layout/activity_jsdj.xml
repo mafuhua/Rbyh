@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_title_bar"/>
+
+    <LinearLayout
+        style="@style/ShopDecLL">
+
+        <TextView
+            style="@style/ShopDecTv"
+            android:layout_weight="1"
+            android:text="子女姓名:"/>
+
+        <EditText
+            android:id="@+id/et_name"
+            style="@style/ShopDecEv"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/ShopDecLL">
+
+        <TextView
+            style="@style/ShopDecTv"
+            android:layout_weight="1"
+            android:text="子女性别:"/>
+
+        <RadioGroup
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:checked="true"
+                android:id="@+id/rbtn_nan"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="男"/>
+
+            <RadioButton
+                android:id="@+id/rbtn_nv"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="女"/>
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/ShopDecLL">
+
+        <TextView
+            style="@style/ShopDecTv"
+            android:layout_weight="1"
+            android:text="家长姓名:"/>
+
+        <EditText
+            android:id="@+id/et_tel"
+            style="@style/ShopDecEv"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/ShopDecLL">
+
+        <TextView
+            style="@style/ShopDecTv"
+            android:layout_weight="1"
+            android:text="手机号:"/>
+
+        <EditText
+            android:id="@+id/et_idcard"
+            style="@style/ShopDecEv"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/ShopDecTv"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:text="入伍地区:"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/province"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:background="@null"/>
+
+                <ImageView
+                    android:layout_width="20dip"
+                    android:layout_height="20dip"
+                    android:layout_marginRight="10dip"
+                    android:src="@drawable/right_jiantou"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/city"
+                    android:layout_width="0dip"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:background="@null"/>
+
+                <ImageView
+                    android:layout_width="20dip"
+                    android:layout_height="20dip"
+                    android:layout_marginRight="10dip"
+                    android:src="@drawable/right_jiantou"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/district"
+                    android:layout_width="0dip"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:background="@null"/>
+
+                <ImageView
+                    android:layout_width="20dip"
+                    android:layout_height="20dip"
+                    android:layout_marginRight="10dip"
+                    android:src="@drawable/right_jiantou"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn_tijiao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@color/title"
+        android:text="提交"
+        android:textColor="@color/grey_color"/>
+</LinearLayout>

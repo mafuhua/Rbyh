@@ -1,0 +1,127 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/beijing"
+              android:orientation="vertical">
+    <include layout="@layout/layout_title_bar"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/jucing2x"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_tel"
+            android:textColor="@color/grey_color"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="请输入您的手机号"
+            android:textColorHint="@color/grey_color"
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+
+        <EditText
+            android:id="@+id/et_yzm"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:paddingLeft="5dp"
+            android:textColor="@color/grey_color"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/jucing2x"
+            android:gravity="center_vertical"
+            android:hint="请输入验证码"
+
+            android:inputType="number"
+            android:textColorHint="@color/grey_color"
+            android:textSize="16sp"/>
+
+        <Button
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/dl3x"
+            android:id="@+id/btn_get_yzm"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:text="获取验证码"
+            android:textColor="@color/text_color"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/jucing2x"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_mima"
+            android:textColor="@color/grey_color"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="请输入密码"
+            android:inputType="number"
+            android:textColorHint="@color/grey_color"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+ <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/jucing2x"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <EditText
+            android:id="@+id/et_mima2"
+            android:textColor="@color/grey_color"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="请再次输入密码"
+            android:inputType="number"
+            android:textColorHint="@color/grey_color"
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn_queding"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/dl3x"
+        android:text="确定"
+        android:textColor="@color/text_color"
+        android:textSize="18sp"/>
+
+</LinearLayout>

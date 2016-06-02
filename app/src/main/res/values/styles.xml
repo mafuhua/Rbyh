@@ -1,0 +1,49 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="ShopDecTv">
+        <!-- android:layout_width="0dp"
+         android:layout_height="wrap_content"
+         android:padding="5dp"-->
+        <item name="android:layout_width">0dp</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="ShopDecLL">
+        <!--android:layout_width="fill_parent"
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_height="wrap_content"-->
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="ShopDecEv">
+        <!-- android:layout_width="0dp"
+         android:layout_height="wrap_content"
+                 android:layout_weight="3"
+
+         android:padding="5dp"-->
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:hint">必填</item>
+        <item name="android:layout_weight">3</item>
+        <item name="android:background">@drawable/jucing2x</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_height">40dp</item>
+    </style>
+</resources>
