@@ -36,11 +36,11 @@
             android:orientation="horizontal">
 
             <RadioButton
-                android:checked="true"
                 android:id="@+id/rbtn_nan"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:checked="true"
                 android:text="男"/>
 
             <RadioButton
@@ -102,76 +102,44 @@
 
         <TextView
             style="@style/ShopDecTv"
-            android:layout_weight="1"
             android:layout_gravity="center_vertical"
+            android:layout_weight="1"
             android:text="入伍地区:"/>
 
-        <LinearLayout
+        <TextView
+            style="@style/ShopDecTv"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:text="福建省"
+            android:textSize="16sp"/>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/xia"/>
+
+        <TextView
+            style="@style/ShopDecTv"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:text="福州市"
+            android:textSize="16sp"/>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/xia"/>
+
+        <Spinner
+            android:id="@+id/spinner0"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:orientation="vertical">
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:textColor="@color/grey"
 
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <Spinner
-                    android:id="@+id/province"
-                    android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_weight="1"
-                    android:background="@null"/>
-
-                <ImageView
-                    android:layout_width="20dip"
-                    android:layout_height="20dip"
-                    android:layout_marginRight="10dip"
-                    android:src="@drawable/right_jiantou"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <Spinner
-                    android:id="@+id/city"
-                    android:layout_width="0dip"
-                    android:layout_height="50dp"
-                    android:layout_weight="1"
-                    android:background="@null"/>
-
-                <ImageView
-                    android:layout_width="20dip"
-                    android:layout_height="20dip"
-                    android:layout_marginRight="10dip"
-                    android:src="@drawable/right_jiantou"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <Spinner
-                    android:id="@+id/district"
-                    android:layout_width="0dip"
-                    android:layout_height="50dp"
-                    android:layout_weight="1"
-                    android:background="@null"/>
-
-                <ImageView
-                    android:layout_width="20dip"
-                    android:layout_height="20dip"
-                    android:layout_marginRight="10dip"
-                    android:src="@drawable/right_jiantou"/>
-            </LinearLayout>
-        </LinearLayout>
+            />
 
 
     </LinearLayout>
@@ -181,7 +149,9 @@
         android:id="@+id/btn_tijiao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:background="@color/title"
         android:text="提交"
         android:textColor="@color/grey_color"/>

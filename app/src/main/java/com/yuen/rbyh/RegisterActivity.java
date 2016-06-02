@@ -2,12 +2,15 @@ package com.yuen.rbyh;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.yuen.baselib.utils.VerifyUtil;
 
 public class RegisterActivity extends BaseActivity implements View.OnClickListener {
 
@@ -64,7 +67,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
 
                 break;
             case R.id.btn_queding:
-
+                submit();
                 break;
         }
     }
@@ -76,7 +79,10 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
             Toast.makeText(this, "请输入您的手机号", Toast.LENGTH_SHORT).show();
             return;
         }
-
+        if (!VerifyUtil.isMobileNO(tel)) {
+            Toast.makeText(this, "请输入正确的手机号", Toast.LENGTH_SHORT).show();
+            return;
+        }
         String yzm = et_yzm.getText().toString().trim();
         if (TextUtils.isEmpty(yzm)) {
             Toast.makeText(this, "请输入验证码", Toast.LENGTH_SHORT).show();
@@ -94,7 +100,12 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
             Toast.makeText(this, "请再次输入密码", Toast.LENGTH_SHORT).show();
             return;
         }
-
+        if (!mima.equals(mima2)){
+            Toast.makeText(this, "密码不一致", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        Log.d("mafuhua","----tel-----"+ tel );
+        startActivity(MainActivity.class);
         // TODO validate success, do something
 
 

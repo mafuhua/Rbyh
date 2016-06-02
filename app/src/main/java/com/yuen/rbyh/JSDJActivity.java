@@ -1,7 +1,9 @@
 package com.yuen.rbyh;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -12,6 +14,8 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.yuen.baselib.utils.VerifyUtil;
 
 import xlkd.util.Util;
 
@@ -30,6 +34,10 @@ public class JSDJActivity extends Util implements View.OnClickListener {
     private Spinner districtSpinner;
     private String tv_result;
     private Button btn_tijiao;
+    private Spinner spinner0;
+    private Context context;
+    private String[] mCountries = new String[]{"福州市", "鼓楼区", "台江区", "仓山区", "晋安区", "马尾区",
+            "福清", "长乐", "连江", "闽侯", "闽清", "罗源", "永泰"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +49,7 @@ public class JSDJActivity extends Util implements View.OnClickListener {
 
     @Override
     public void initView() {
-
+        context = this;
         iv_btn_back = (Button) findViewById(R.id.iv_btn_back);
         iv_btn_back.setOnClickListener(this);
         tv_title_dec = (TextView) findViewById(R.id.tv_title_dec);
@@ -58,19 +66,44 @@ public class JSDJActivity extends Util implements View.OnClickListener {
         et_tel.setOnClickListener(this);
         et_idcard = (EditText) findViewById(R.id.et_idcard);
         et_idcard.setOnClickListener(this);
-        provinceSpinner = (Spinner) findViewById(R.id.province);
+       /* provinceSpinner = (Spinner) findViewById(R.id.province);
         citySpinner = (Spinner) findViewById(R.id.city);
-        districtSpinner = (Spinner) findViewById(R.id.district);
+        districtSpinner = (Spinner) findViewById(R.id.district);*/
         btn_tijiao = (Button) findViewById(R.id.btn_tijiao);
         btn_tijiao.setOnClickListener(this);
         tv_title_dec.setText("家属登记");
         iv_btn_back.setVisibility(View.VISIBLE);
         layout_title_bar.setBackgroundColor(getResources().getColor(R.color.title));
+        spinner0 = (Spinner) findViewById(R.id.spinner0);
+        spinner0.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int pos, long id) {
+                Log.d("mafuhua", mCountries[pos] + "你点击的是:" + pos);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+    }
+
+    private void setSpinnerContent(final Spinner spinners, final String[] mCountries) {
+        if (mCountries == null) {
+            return;
+        }
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(context,
+                android.R.layout.simple_spinner_item, mCountries);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinners.setAdapter(adapter);
+
     }
 
     @Override
     public void loadData() {
-        initProvinceDatas();
+      /*  initProvinceDatas();
         ArrayAdapter<String> provinceAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mProvinceDatas);
         provinceSpinner.setAdapter(provinceAdapter);
         provinceSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -134,7 +167,7 @@ public class JSDJActivity extends Util implements View.OnClickListener {
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
-        });
+        });*/
     }
 
     @Override
@@ -144,7 +177,7 @@ public class JSDJActivity extends Util implements View.OnClickListener {
                 finish();
                 break;
             case R.id.btn_tijiao:
-
+                submit();
                 break;
         }
     }
@@ -153,13 +186,13 @@ public class JSDJActivity extends Util implements View.OnClickListener {
         // validate
         String name = et_name.getText().toString().trim();
         if (TextUtils.isEmpty(name)) {
-            Toast.makeText(this, "name不能为空", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "姓名不能为空", Toast.LENGTH_SHORT).show();
             return;
         }
 
         String tel = et_tel.getText().toString().trim();
         if (TextUtils.isEmpty(tel)) {
-            Toast.makeText(this, "tel不能为空", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "手机号不能为空", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -168,7 +201,11 @@ public class JSDJActivity extends Util implements View.OnClickListener {
             Toast.makeText(this, "idcard不能为空", Toast.LENGTH_SHORT).show();
             return;
         }
-
+        if (!VerifyUtil.isIDCard(idcard)) {
+            Toast.makeText(this, "请输入正确的身份证号", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        Log.d("mafuhua", "-----tel + name + idcard ----" + tel + name + idcard);
         // TODO validate success, do something
 
 
