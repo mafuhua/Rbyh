@@ -1,4 +1,4 @@
-package com.yuen.rbyh;
+package com.yuen.rbyh.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,6 +17,8 @@ public abstract class BaseActivity extends AppCompatActivity {
      */
     protected int mLayoutResID = -1;
 
+    public String[] mCountries = new String[]{"福州市", "鼓楼区", "台江区", "仓山区", "晋安区", "马尾区",
+            "福清", "长乐", "连江", "闽侯", "闽清", "罗源", "永泰"};
 
     /**
      * initTitle:初始化标题. <br/>

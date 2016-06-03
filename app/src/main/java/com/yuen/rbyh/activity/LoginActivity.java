@@ -1,4 +1,4 @@
-package com.yuen.rbyh;
+package com.yuen.rbyh.activity;
 
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -10,6 +10,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.yuen.baselib.utils.VerifyUtil;
+import com.yuen.rbyh.R;
+import com.yuen.rbyh.uitls.XUtils;
 
 import org.xutils.common.Callback;
 

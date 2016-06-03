@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp">
+
+    <TextView
+        android:id="@+id/tv_danwei"
+        android:layout_marginBottom="3dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="福州   合金钢"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/tv_shouji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_danwei"
+        android:layout_marginRight="20dp"
+        android:text="手机号码:18960761978"/>
+
+    <TextView
+        android:id="@+id/tv_gongzhonghao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_shouji"
+        android:layout_marginRight="20dp"
+        android:text="微信公众号:福州台江区征兵办"/>
+</RelativeLayout>

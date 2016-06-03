@@ -3,7 +3,7 @@ package xlkd.util;
 
 import android.content.res.AssetManager;
 
-import com.yuen.rbyh.BaseActivity;
+import com.yuen.rbyh.activity.BaseActivity;
 
 import java.io.InputStream;
 import java.util.HashMap;

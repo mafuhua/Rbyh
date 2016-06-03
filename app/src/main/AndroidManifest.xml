@@ -13,26 +13,26 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".LoginActivity">
+        <activity android:name=".activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ForgetPswActivity">
+        <activity android:name=".activity.ForgetPswActivity">
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.MainActivity">
         </activity>
-        <activity android:name=".RegisterActivity">
+        <activity android:name=".activity.RegisterActivity">
         </activity>
-        <activity android:name=".GRBMActivity">
+        <activity android:name=".activity.GRBMActivity">
         </activity>
-        <activity android:name=".JSDJActivity">
+        <activity android:name=".activity.JSDJActivity">
         </activity>
-        <activity android:name=".ZBRXActivity">
+        <activity android:name=".activity.ZBRXActivity">
         </activity>
-        <activity android:name=".ZBSMActivity">
+        <activity android:name=".activity.ZBSMActivity">
         </activity>
     </application>
 

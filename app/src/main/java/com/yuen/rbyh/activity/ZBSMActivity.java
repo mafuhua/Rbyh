@@ -1,6 +1,9 @@
-package com.yuen.rbyh;
+package com.yuen.rbyh.activity;
 
 import android.os.Bundle;
+
+import com.yuen.rbyh.R;
+import com.yuen.rbyh.activity.BaseActivity;
 
 public class ZBSMActivity extends BaseActivity {
 

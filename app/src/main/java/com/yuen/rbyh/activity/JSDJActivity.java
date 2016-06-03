@@ -1,4 +1,4 @@
-package com.yuen.rbyh;
+package com.yuen.rbyh.activity;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.yuen.baselib.utils.VerifyUtil;
+import com.yuen.rbyh.R;
 
 import xlkd.util.Util;
 
@@ -36,8 +37,6 @@ public class JSDJActivity extends Util implements View.OnClickListener {
     private Button btn_tijiao;
     private Spinner spinner0;
     private Context context;
-    private String[] mCountries = new String[]{"福州市", "鼓楼区", "台江区", "仓山区", "晋安区", "马尾区",
-            "福清", "长乐", "连江", "闽侯", "闽清", "罗源", "永泰"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

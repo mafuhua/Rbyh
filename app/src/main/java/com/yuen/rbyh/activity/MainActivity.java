@@ -1,10 +1,12 @@
-package com.yuen.rbyh;
+package com.yuen.rbyh.activity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.yuen.rbyh.R;
 
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
