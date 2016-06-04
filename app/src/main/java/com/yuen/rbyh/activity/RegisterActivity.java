@@ -12,8 +12,12 @@ import android.widget.Toast;
 
 import com.yuen.baselib.utils.VerifyUtil;
 import com.yuen.rbyh.R;
-import com.yuen.rbyh.activity.BaseActivity;
-import com.yuen.rbyh.activity.MainActivity;
+import com.yuen.rbyh.uitls.ContactURL;
+import com.yuen.rbyh.uitls.XUtils;
+
+import org.xutils.common.Callback;
+
+import java.util.HashMap;
 
 public class RegisterActivity extends BaseActivity implements View.OnClickListener {
 
@@ -107,10 +111,34 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
             Toast.makeText(this, "密码不一致", Toast.LENGTH_SHORT).show();
             return;
         }
-        Log.d("mafuhua","----tel-----"+ tel );
-        startActivity(MainActivity.class);
-        // TODO validate success, do something
+        register(tel,mima);
 
 
+    }
+    private void register(String tel, String password) {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("tel",tel);
+        map.put("pwd",password);
+        XUtils.xUtilsPost(ContactURL.LOGIN_URL, map,new Callback.CommonCallback<String>() {
+            //  XUtils.xUtilsGet("https://hao.360.cn/?src=360c", new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                Log.d("mafuhua", "---------" + result);
+                startActivity(MainActivity.class);
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+            }
+        });
     }
 }

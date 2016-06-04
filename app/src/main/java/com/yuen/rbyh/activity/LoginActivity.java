@@ -2,7 +2,6 @@ package com.yuen.rbyh.activity;
 
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -11,9 +10,12 @@ import android.widget.Toast;
 
 import com.yuen.baselib.utils.VerifyUtil;
 import com.yuen.rbyh.R;
+import com.yuen.rbyh.uitls.ContactURL;
 import com.yuen.rbyh.uitls.XUtils;
 
 import org.xutils.common.Callback;
+
+import java.util.HashMap;
 
 
 public class LoginActivity extends BaseActivity implements View.OnClickListener {
@@ -79,8 +81,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             Toast.makeText(this, "请输入密码", Toast.LENGTH_SHORT).show();
             return;
         }
-        Log.d("mafuhua","----tel + password-----"+ tel + password);
-        startActivity(MainActivity.class);
+        login(tel,password);
         // TODO validate success, do something
 
 
@@ -103,19 +104,21 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         }
     }
 
-    private void login() {
-        startActivity(MainActivity.class);
-        XUtils.xUtilsGet("http://192.168.2.112/bing/jiekou/login", new Callback.CommonCallback<String>() {
+    private void login(String tel, String password) {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("tel",tel);
+        map.put("pwd",password);
+        XUtils.xUtilsPost(ContactURL.LOGIN_URL, map,new Callback.CommonCallback<String>() {
             //  XUtils.xUtilsGet("https://hao.360.cn/?src=360c", new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
-                Log.d("mafuhua", "---------" + result);
+                System.out.print("---------" + result);
+                startActivity(MainActivity.class);
                 Toast.makeText(LoginActivity.this, result, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
-                Log.d("mafuhua", "isOnCallback:" + isOnCallback);
             }
 
             @Override
@@ -125,7 +128,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
             @Override
             public void onFinished() {
-                Log.d("mafuhua", "isOnCallback:onFinished");
             }
         });
     }
